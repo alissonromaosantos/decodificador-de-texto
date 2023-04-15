@@ -39,7 +39,6 @@ main {
   justify-content: center;
 
   width: 100%;
-  height: 100vh;
   padding: 55px 70px;
 }
 
@@ -55,7 +54,6 @@ main {
   flex-direction: column;
 
   width: 680px;
-  height: 700;
 }
 
 .encrypt-decrypt-area textarea {
@@ -228,4 +226,140 @@ main {
 
 .copy-button:hover {
   filter: brightness(75%);
+}
+
+@media screen and (max-width: 520px) {
+  main {
+    padding: 50px;
+  }
+
+  .encrypt-decrypt-area {
+    width: 300px;
+  }
+
+  form.encrypt-decrypt-area textarea {
+    width: 300px;
+    height: 480px;
+    margin-top: 38px;
+    padding: 0;
+    font-size: 18px;
+  }
+
+  .buttons-area {
+    align-items: center;
+
+    width: 315px;
+  }
+
+  .container-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+
+  .encrypt-button,
+  .decrypt-button {
+    width: 300px;
+  }
+
+  .encrypt-button {
+    margin-top: 16px;
+  }
+
+  .decrypt-button {
+    margin-left: 0;
+  }
+
+  div.show-message {
+    width: 290px;
+    height: 506px;
+  }
+
+  div.show-message h3 {
+    width: 300px;
+
+    font-size: 16px;
+  }
+
+  div.show-message p {
+    width: 270px;
+
+    font-size: 14px;
+  }
+
+  div.show-message textarea {
+    width: 280px;
+    line-height: 20px;
+    padding: 20px;
+
+    font-size: 14px;
+  }
+
+  button.copy-button {
+    width: 280px;
+    height: 40px;
+    margin-left: 0;
+    margin-top: 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  main {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .encrypt-decrypt-area textarea {
+    height: 750px;
+  }
+
+  .show-message {
+    width: 688px;
+    position: static;
+    margin-top: 64px;
+    padding: 32px;
+  }
+
+  .show-message textarea {
+    width: 624px;
+    height: 343px;
+    position: static;
+  }
+
+  .show-message img {
+    display: none;
+  }
+
+  .show-message h3 {
+    width: 624px;
+    height: 29px;
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+
+  .show-message p {
+    width: 624px;
+    height: 24px;
+    margin-bottom: 32px;
+  }
+
+  .copy-button {
+    width: 624px;
+    height: 67px;
+    position: static;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  main {
+    height: 100vh;
+  }
+
+  .encrypt-decrypt-area textarea {
+    height: 1000px;
+  }
+
+  .show-message textarea {
+    width: 650px;
+  }
 }
