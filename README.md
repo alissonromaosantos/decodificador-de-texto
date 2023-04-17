@@ -22,16 +22,20 @@ O desafio proposto consiste na criação de um layout 100% responsivo que possib
 
 ## Funcionalidades
 
-Criptografar texto
-Descriptografar texto
-Botão copiar texto para área de transferência
+<ul>
+    <li>Criptografar texto</li>
+    <li>Descriptografar texto</li>
+    <li>Botão copiar texto para área de transferência</li>
+</ul>
 
 ## Tecnologias Utilizadas
 
-HTML
-CSS
-JavaScript
+<ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>JavaScript</li>
+</ul>
 
-Feito com 🖤 Alisson Romão Santos.
+Feito com 🖤 Álisson Romão Santos.
 
 &copy; MIT LICENSE
