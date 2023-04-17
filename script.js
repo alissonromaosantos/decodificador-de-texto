@@ -14,7 +14,7 @@ const screenSize = screen.offsetWidth;
 let encryptedWords = [];
 let decryptedWords = [];
 
-encryptButton.addEventListener("click", (event) => {
+function cryptographWords(event) {
   event.preventDefault();
   event.stopPropagation();
 
@@ -98,5 +98,84 @@ encryptButton.addEventListener("click", (event) => {
 
     titleShowMessage.style.display = "block";
     paragraphShowMessage.style.display = "block";
+
+    textareaShowMessage.style.display = "none";
+    copyButton.style.display = "none";
   }
+}
+
+function decryptographWords(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  let newText = "";
+  textareaShowMessage.value = "";
+
+  if (
+    textInput.value === textInput.value.toLowerCase() &&
+    textInput.value !== "" &&
+    !textInput.value.includes("à") &&
+    !textInput.value.includes("á") &&
+    !textInput.value.includes("é") &&
+    !textInput.value.includes("ê") &&
+    !textInput.value.includes("í") &&
+    !textInput.value.includes("ó") &&
+    !textInput.value.includes("ô") &&
+    !textInput.value.includes("ú") &&
+    !textInput.value.includes("ç") &&
+    !textInput.value.includes("ã") &&
+    !textInput.value.includes("õ")
+  ) {
+    warningMessage.style.color = "var(--gray-400)";
+
+    imageShowMessage.style.display = "none";
+    titleShowMessage.style.display = "none";
+    paragraphShowMessage.style.display = "none";
+
+    textareaShowMessage.style.display = "block";
+    copyButton.style.display = "block";
+
+    let text = textInput.value;
+
+    newText = text
+      .replaceAll("ai", "a")
+      .replaceAll("enter", "e")
+      .replaceAll("imes", "i")
+      .replaceAll("ober", "o")
+      .replaceAll("ufat", "u");
+
+    textareaShowMessage.value = newText;
+  } else {
+    warningMessage.style.color = "#f30000";
+
+    if (screenSize > 1024) {
+      imageShowMessage.style.display = "block";
+    }
+
+    titleShowMessage.style.display = "block";
+    paragraphShowMessage.style.display = "block";
+
+    textareaShowMessage.style.display = "none";
+    copyButton.style.display = "none";
+  }
+}
+
+function copyText(event) {
+  event.preventDefault();
+  event.stopPropagation();
+
+  textareaShowMessage.select();
+  document.execCommand("copy");
+}
+
+copyButton.addEventListener("click", (event) => {
+  copyText(event);
+});
+
+encryptButton.addEventListener("click", (event) => {
+  cryptographWords(event);
+});
+
+decryptButton.addEventListener("click", (event) => {
+  decryptographWords(event);
 });
